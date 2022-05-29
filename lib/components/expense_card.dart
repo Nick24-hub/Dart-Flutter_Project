@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:proiect_tppm/pages/expense_detail.dart';
 import '../types/expsense.dart';
 
 class ExpenseCard extends StatelessWidget {
@@ -8,9 +10,19 @@ class ExpenseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18.0),
-      child: Text(expense.title),
+    return GestureDetector(
+      child: Container(
+        padding: const EdgeInsets.all(18.0),
+        child: Text(expense.title),
+      ),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ExpenseDetail(
+                      expense: expense,
+                    )));
+      },
     );
   }
 }
