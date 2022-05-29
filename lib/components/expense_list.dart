@@ -14,12 +14,12 @@ class ExpenseList extends StatefulWidget {
 }
 
 Future<List<Expense>> getExpenses() async {
-  final String jsonData =
-      await rootBundle.loadString('assets/expense_list.json');
+  final jsonData = await rootBundle.loadString('assets/expense_list.json');
   if (jsonData.isEmpty) {
     throw Exception("Failed to load expenses");
   } else {
-    List expenses = await json.decode(jsonData);
+    List expenses = json.decode(jsonData);
+    print(expenses);
     return expenses.map((data) => Expense.fromJson(data)).toList();
   }
 }
@@ -35,35 +35,40 @@ class _ExpenseListState extends State<ExpenseList> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: expenses,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          List<Expense>? expense = snapshot.data as List<Expense>?;
-          return ListView.builder(
-            itemCount: expense?.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Divider(),
-                  ExpenseCard(
-                      expense: Expense(
-                          id: expense![index].id,
-                          title: expense[index].title,
-                          price: expense[index].price,
-                          description: expense[index].description,
-                          date: expense[index].date))
-                ],
+    return RefreshIndicator(
+        child: FutureBuilder<List<Expense>>(
+          future: getExpenses(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              List<Expense>? expense = snapshot.data;
+              return ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Divider(),
+                      ExpenseCard(
+                          expense: Expense(
+                              id: expense![index].id,
+                              title: expense[index].title,
+                              price: expense[index].price,
+                              description: expense[index].description,
+                              date: expense[index].date))
+                    ],
+                  );
+                },
+                itemCount: expense?.length,
               );
-            },
-          );
-        } else if (snapshot.hasError) {
-          return const Text('Error in data');
-        } else {
-          return const Text('Loadin data..');
-        }
-      },
-    );
+            } else if (snapshot.hasError) {
+              return const Text('Error in data');
+            } else {
+              return const CircularProgressIndicator();
+            }
+          },
+        ),
+        onRefresh: () {
+          setState(() {});
+          return getExpenses();
+        });
   }
 }

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proiect_tppm/pages/expense_detail.dart';
 import '../types/expsense.dart';
