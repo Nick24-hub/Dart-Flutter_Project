@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:proiect_tppm/pages/expenses.dart';
+import 'package:proiect_tppm/pages/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Welcome to Flutter',
           theme: ThemeData(primarySwatch: Colors.blue),
-          home: const Expenses());
+          home: const Dashboard());
     });
   }
 }
