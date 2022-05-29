@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    },
+    {
+        "id": 1,
+        "title": "Phone",
+        "price": 500,
+        "description": "Samsung Galaxy S22",
+        "date": "2022.05.03"
+    },
+    {
+        "id": 2,
+        "title": "Car",
+        "price": 18000,
+        "description": "Suzuki Vitara",
+        "date": "2020.07.22"
+    }
+]
