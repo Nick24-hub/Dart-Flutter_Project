@@ -13,7 +13,8 @@ class _ExpenseAddFormState extends State<ExpenseAddForm> {
   final _formKey = GlobalKey<FormState>();
   final Map<String, dynamic> formData = {
     'title': '',
-    'price': 0,
+    'price': '',
+    'category': '',
     'description': '',
     'date': ''
   };
@@ -55,6 +56,20 @@ class _ExpenseAddFormState extends State<ExpenseAddForm> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: TextFormField(
+            decoration: const InputDecoration(labelText: "Enter the category"),
+            validator: (value) {
+              return (value == null || value.isEmpty)
+                  ? "Please fill the category"
+                  : null;
+            },
+            onSaved: (value) {
+              formData['category'] = value;
+            },
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: TextFormField(
             decoration:
                 const InputDecoration(labelText: "Enter the description"),
             validator: (value) {
@@ -90,7 +105,10 @@ class _ExpenseAddFormState extends State<ExpenseAddForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 addExpense(formData);
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => const Expenses())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const Expenses())));
               }
             },
           ),

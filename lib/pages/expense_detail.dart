@@ -13,7 +13,8 @@ class ExpenseDetail extends StatelessWidget {
         title: Text(expense.title),
       ),
       body: Center(
-          child: Text("${expense.description}\n Price: ${expense.price}\n Date: ${expense.date}")),
+          child: Text(
+              "${expense.description}\n Price: ${expense.price}\n Category: ${expense.category}\n Date: ${expense.date}")),
     );
   }
 }

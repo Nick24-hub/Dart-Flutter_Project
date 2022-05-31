@@ -83,6 +83,7 @@ class _ExpenseListState extends State<ExpenseList> {
                           expense: Expense(
                               title: expense![index].title,
                               price: expense[index].price,
+                              category: expense[index].category,
                               description: expense[index].description,
                               date: expense[index].date))
                     ],

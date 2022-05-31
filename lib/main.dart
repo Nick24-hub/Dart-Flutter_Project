@@ -4,9 +4,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:proiect_tppm/pages/dashboard.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => ApplicationState(),
+      builder: (context, _) => MyApp(),
+    ),);
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +21,7 @@ class MyApp extends StatelessWidget {
     return Builder(builder: (context) {
       return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Welcome to Flutter',
+          title: 'Budget Tracker',
           theme: ThemeData(primarySwatch: Colors.blue),
           home: const Dashboard());
     });
