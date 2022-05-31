@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:proiect_tppm/components/expense_list.dart';
 import 'package:proiect_tppm/pages/expenses.dart';
+import 'package:provider/provider.dart';
+
+import 'application_state.dart';
+import 'authentication.dart';
 
 class ExpenseAddForm extends StatefulWidget {
   const ExpenseAddForm({Key? key}) : super(key: key);
@@ -97,20 +101,37 @@ class _ExpenseAddFormState extends State<ExpenseAddForm> {
             },
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: ElevatedButton(
-            child: const Text("Submit"),
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                addExpense(formData);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) => const Expenses())));
-              }
-            },
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(vertical: 16.0),
+        //   child: ElevatedButton(
+        //     child: const Text("Submit"),
+        //     onPressed: () {
+        //       if (_formKey.currentState!.validate()) {
+        //         _formKey.currentState!.save();
+        //         addExpense(formData);
+        //         Navigator.push(
+        //             context,
+        //             MaterialPageRoute(
+        //                 builder: ((context) => const Expenses())));
+        //       }
+        //     },
+        //   ),
+        // ),
+        Consumer<ApplicationState>(
+          builder: (context, appState, _) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ElevatedButton(
+                child: const Text("Submit"),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                    appState.addExpense(formData);
+                    Navigator.pop(context);  
+                  }
+                },
+              ),
+            ],
           ),
         ),
       ]),
