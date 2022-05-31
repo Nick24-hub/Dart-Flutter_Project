@@ -13,13 +13,16 @@ class ExpenseList extends StatefulWidget {
 }
 
 Future<List<Expense>> getExpenses(CollectionReference colRef) async {
-    // Get docs from collection reference
-    QuerySnapshot querySnapshot = await colRef.where('userId', isEqualTo: FirebaseAuth.instance.currentUser!.uid).get();
+  // Get docs from collection reference
+  QuerySnapshot querySnapshot = await colRef
+      .orderBy("timestamp", descending: true)
+      .where('userId', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+      .get();
 
-    // Get data from docs and convert map to List
-    List allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+  // Get data from docs and convert map to List
+  List allData = querySnapshot.docs.map((doc) => doc.data()).toList();
 
-    return allData.map((data) => Expense.fromJson(data)).toList();
+  return allData.map((data) => Expense.fromJson(data)).toList();
 }
 
 class _ExpenseListState extends State<ExpenseList> {

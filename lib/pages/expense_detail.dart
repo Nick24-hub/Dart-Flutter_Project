@@ -13,8 +13,38 @@ class ExpenseDetail extends StatelessWidget {
         title: Text(expense.title),
       ),
       body: Center(
-          child: Text(
-              "${expense.description}\n Price: ${expense.price}\n Category: ${expense.category}\n Date: ${expense.date}")),
+          child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Text("Title: ${expense.title}"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Text("Price: ${expense.price}"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Text("Category: ${expense.category}"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Text("Description: ${expense.description}"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Text("date: ${expense.date}"),
+          ),
+        ],
+      )),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.money), label: 'Expenses'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'More')
+        ],
+        currentIndex: 2,
+      ),
     );
   }
 }

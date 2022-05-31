@@ -20,7 +20,7 @@ class _ExpensesState extends State<Expenses> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.business), label: 'Dashboard'),
+              icon: Icon(Icons.business), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.money), label: 'Expenses'),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: 'More')
         ],

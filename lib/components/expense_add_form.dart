@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proiect_tppm/components/expense_list.dart';
-import 'package:proiect_tppm/pages/expenses.dart';
 import 'package:provider/provider.dart';
-
 import 'application_state.dart';
-import 'authentication.dart';
+
 
 class ExpenseAddForm extends StatefulWidget {
   const ExpenseAddForm({Key? key}) : super(key: key);
