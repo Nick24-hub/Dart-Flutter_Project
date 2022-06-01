@@ -17,7 +17,7 @@ class ExpenseCard extends StatelessWidget {
             children: [
               Text('Title: ${expense.title}'),
               Text('Price: ${expense.price}'),
-              Text('Date ${expense.date}')
+              Text('Date: ${expense.date}')
             ],
           )),
       onTap: () {
