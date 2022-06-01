@@ -47,7 +47,7 @@ class _ExpensesState extends State<Expenses> {
 }
 
 class MySearchDelegate extends SearchDelegate {
-  List<String> searchResults = ['House', 'Car', 'Food', 'PC'];
+  List<String> searchResults = ['House', 'Car', 'Food', 'PC', 'Telephone', 'Telefon', 'Masina', 'Casa', 'Mancare', 'Calculator'];
 
   @override
   List<Widget>? buildActions(BuildContext context) => [
