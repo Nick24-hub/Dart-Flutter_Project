@@ -13,11 +13,10 @@ class ExpenseCard extends StatelessWidget {
       child: Container(
           padding: const EdgeInsets.all(18.0),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text('Title: ${expense.title}'),
-              const Spacer(),
               Text('Price: ${expense.price}'),
-              const Spacer(),
               Text('Date ${expense.date}')
             ],
           )),
