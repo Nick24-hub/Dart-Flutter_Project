@@ -11,9 +11,16 @@ class ExpenseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        padding: const EdgeInsets.all(18.0),
-        child: Text(expense.title),
-      ),
+          padding: const EdgeInsets.all(18.0),
+          child: Row(
+            children: [
+              Text('Title: ${expense.title}'),
+              const Spacer(),
+              Text('Price: ${expense.price}'),
+              const Spacer(),
+              Text('Date ${expense.date}')
+            ],
+          )),
       onTap: () {
         Navigator.push(
             context,

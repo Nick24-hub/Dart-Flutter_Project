@@ -23,7 +23,9 @@ class _ExpensesState extends State<Expenses> {
               icon: const Icon(Icons.search))
         ],
       ),
-      body: const ExpenseList(query: '',),
+      body: const ExpenseList(
+        query: '',
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Home'),
@@ -37,7 +39,7 @@ class _ExpensesState extends State<Expenses> {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const AddExpense()));
         },
-        tooltip: 'Increment counter',
+        tooltip: 'Add an expense',
         child: const Icon(Icons.add),
       ),
     );

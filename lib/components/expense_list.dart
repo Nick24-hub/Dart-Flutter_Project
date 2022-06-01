@@ -10,10 +10,6 @@ class ExpenseList extends StatefulWidget {
 
   final String query;
 
-  String getQuery() {
-    return query;
-  }
-
   @override
   State<ExpenseList> createState() => _ExpenseListState();
 }
