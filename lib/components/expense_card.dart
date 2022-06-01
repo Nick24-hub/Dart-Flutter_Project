@@ -14,7 +14,7 @@ class ExpenseCard extends StatelessWidget {
           padding: const EdgeInsets.all(18.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
+            children: <Widget>[
               Text('Title: ${expense.title}'),
               Text('Price: ${expense.price}'),
               Text('Date: ${expense.date}')
