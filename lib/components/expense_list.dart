@@ -10,7 +10,7 @@ class ExpenseList extends StatefulWidget {
 
   final String query;
 
-  String getQuery(){
+  String getQuery() {
     return query;
   }
 
@@ -39,8 +39,9 @@ Future<List<Expense>> getExpenses(
   }
 
   // Get data from docs and convert map to List
-  List allData = querySnapshot.docs.map((doc) => doc.data()).toList();
-
+  List allData = querySnapshot.docs
+      .map((doc) => {'id': doc.id, 'data': doc.data()})
+      .toList();
   return allData.map((data) => Expense.fromJson(data)).toList();
 }
 
@@ -48,23 +49,21 @@ class _ExpenseListState extends State<ExpenseList> {
   late Future<List<Expense>> expenses;
   final CollectionReference _collectionRef =
       FirebaseFirestore.instance.collection('expenses');
-      
+
   late String query;
-  
 
   @override
   void initState() {
     super.initState();
     query = widget.query;
-    print(query);
-    expenses = getExpenses(_collectionRef,query);
+    expenses = getExpenses(_collectionRef, query);
   }
 
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
         child: FutureBuilder<List<Expense>>(
-          future: getExpenses(_collectionRef,query),
+          future: getExpenses(_collectionRef, query),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List<Expense>? expense = snapshot.data;
@@ -76,11 +75,13 @@ class _ExpenseListState extends State<ExpenseList> {
                       const Divider(),
                       ExpenseCard(
                           expense: Expense(
-                              title: expense![index].title,
+                              id: expense![index].id,
+                              title: expense[index].title,
                               price: expense[index].price,
                               category: expense[index].category,
                               description: expense[index].description,
-                              date: expense[index].date))
+                              date: expense[index].date,
+                              timestamp: expense[index].timestamp))
                     ],
                   );
                 },
@@ -95,7 +96,7 @@ class _ExpenseListState extends State<ExpenseList> {
         ),
         onRefresh: () {
           setState(() {});
-          return getExpenses(_collectionRef,query);
+          return getExpenses(_collectionRef, query);
         });
   }
 }

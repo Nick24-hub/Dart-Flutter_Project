@@ -98,22 +98,6 @@ class _ExpenseAddFormState extends State<ExpenseAddForm> {
             },
           ),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.symmetric(vertical: 16.0),
-        //   child: ElevatedButton(
-        //     child: const Text("Submit"),
-        //     onPressed: () {
-        //       if (_formKey.currentState!.validate()) {
-        //         _formKey.currentState!.save();
-        //         addExpense(formData);
-        //         Navigator.push(
-        //             context,
-        //             MaterialPageRoute(
-        //                 builder: ((context) => const Expenses())));
-        //       }
-        //     },
-        //   ),
-        // ),
         Consumer<ApplicationState>(
           builder: (context, appState, _) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
